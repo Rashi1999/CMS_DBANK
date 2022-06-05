@@ -1,0 +1,21 @@
+{
+    "readersList": [
+        {
+          "email": "reader@dbank.com",
+          "password": "readerpwd"
+        }
+      ], 
+    "superadminList":[
+      {
+        "email": "superadmin@dbank.com",
+        "password": "superadminpwd"
+      }
+    ],
+    "adminList":[
+      {
+        "email": "admin@dbank.com",
+        "password": "adminpwd"
+      }
+    ]
+}
+    

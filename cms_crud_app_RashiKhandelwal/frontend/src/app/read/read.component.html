@@ -1,0 +1,43 @@
+<div class="container mt-5">
+
+    <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fadeshow" role="alert">
+        <strong>{{ errormsg }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="sucessmsg" class="alert alert-warning alert-dismissible fadeshow" role="alert">
+        <strong>{{ sucessmsg }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+
+    <div class="card">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Blog Id</th>
+                    <th>Author Id</th>
+                    <th>Author Name</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let blog of readData">
+                    <td>{{  blog.blogid }}</td>
+                    <td>{{  blog.authid }}</td>
+                    <td>{{  blog.authname }}</td>
+                    <td>{{  blog.category }}</td>
+                    <td>{{  blog.content }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-success" [routerLink]="['/create', blog.blogid]">Update</a>
+                        &nbsp;
+                        <button (click)="deleteId(blog.blogid)" class="btn btn-sm btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

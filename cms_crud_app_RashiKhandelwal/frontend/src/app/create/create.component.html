@@ -1,0 +1,53 @@
+<div class="container mt-5">
+
+    <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fadeshow" role="alert">
+        <strong>{{ errormsg }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="sucessmsg" class="alert alert-warning alert-dismissible fadeshow" role="alert">
+        <strong>{{ sucessmsg }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="card">
+        <form [formGroup]="blogForm">
+            <div class="col-lg-4 mt-2">
+                <label for="authid">Author's ID</label>
+                <input type="text" class="form-control" formControlName="authid" placeholder="Enter your AuthId">
+            </div>
+            <br>
+
+            <div class="col-lg-8 mt-2">
+                <label for="authname">Author's Full Name</label>
+                <input type="text" class="form-control" formControlName="authname" placeholder="Enter your fullname">
+            </div>
+            <br>
+
+            <div class="col-lg-4 mt-2">
+                <label for="category">Select Blog Category</label>
+                <select class="form-control" formControlName="category">
+                <option>Education</option>
+                <option>Technology</option>
+                <option>Fashion</option>
+                <option>Movies</option>
+                <option>Sports</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="col-lg-10 mt-2">
+                <label for="content">Blog Content</label>
+                <textarea class="form-control" formControlName="content" rows="3" placeholder="Write the blog content here"></textarea>
+            </div>
+            <br>
+            
+            <div class="col-lg-4 mt-2">
+                <button class="btn btn-mt btn-danger" (click)="blogSubmit()" *ngIf="!getParamId">Add</button>    
+            </div>
+            <div class="col-lg-4 mt-2">
+                <button class="btn btn-mt btn-danger" (click)="blogUpdate()" *ngIf="getParamId">Update</button>    
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<!-- navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" routerLink="">Content Management System</a>
+  <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav ml-auto p-2 align-right">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="create" routerLinkActive="active">Add Blogs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="read" routerLinkActive="active">Read Blogs</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
